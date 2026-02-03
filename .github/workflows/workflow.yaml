@@ -30,6 +30,8 @@ jobs:
           context: .
           dockerfile: ./Dockerfile
           push: true
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
           tags: |
             ${{ secrets.DOCKER_USERNAME }}/python-weatherapp:latest
             ${{ secrets.DOCKER_USERNAME }}/python-weatherapp:${{ github.sha }}
