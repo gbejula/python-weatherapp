@@ -30,4 +30,6 @@ jobs:
           context: .
           dockerfile: ./Dockerfile
           push: true
-          tags: user/app:latest
+          tags: |
+            ${{ secrets.DOCKER_USERNAME }}/python-weatherapp:latest
+            ${{ secrets.DOCKER_USERNAME }}/python-weatherapp:${{ github.sha }}
